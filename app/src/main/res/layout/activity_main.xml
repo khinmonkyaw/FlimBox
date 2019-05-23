@@ -21,8 +21,67 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
+    >
+
+        <TextView
+                android:id="@+id/tvLatestMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latest Movie"
+                style="@style/label"
+                android:layout_margin="@dimen/margin_medium_2"
+
+        />
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tvLatestMovie"
+                android:layout_alignLeft="@id/tvLatestMovie"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                app:cardCornerRadius="4dp"
+                android:elevation="2dp"
+
+        >
+            <ImageView
+                    android:id="@+id/ivLatestMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/dummy"
+                    android:scaleType="centerCrop"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="fixed"
+                android:layout_below="@id/card"
+
+        />
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+        android:layout_below="@id/tb"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"

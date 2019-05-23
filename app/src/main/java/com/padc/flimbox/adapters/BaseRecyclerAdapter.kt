@@ -8,10 +8,9 @@ import com.padc.flimbox.views.holders.BaseViewHolder
 
 import java.util.ArrayList
 
-abstract class BaseRecyclerAdapter<T, W : Any>(context: Context) : RecyclerView.Adapter<BaseViewHolder<W>>() {
+abstract class BaseRecyclerAdapter<T, W> : RecyclerView.Adapter<BaseViewHolder<W>>() {
 
     protected var mData: MutableList<W>? = null
-    protected var mLayoutInflator: LayoutInflater
 
     val items: List<W>
         get() {
@@ -21,7 +20,6 @@ abstract class BaseRecyclerAdapter<T, W : Any>(context: Context) : RecyclerView.
 
     init {
         mData = ArrayList()
-        mLayoutInflator = LayoutInflater.from(context)
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<W>, position: Int) {
