@@ -4,9 +4,9 @@ package com.padc.flimbox.views.holders
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseViewHolder<W : Any>(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+abstract class BaseViewHolder<W>(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
-    protected lateinit var mData: W
+    protected var mData: W? = null
 
     init {
         itemView.setOnClickListener(this)
